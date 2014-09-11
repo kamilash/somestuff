@@ -40,8 +40,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'scrooloose/nerdtree'    " shows directories tree
-Plugin 'scrooloose/syntastic'   " syntax checking
-Plugin 'bling/vim-airline'      " gay stuff
+Plugin 'scrooloose/syntastic'   " language syntax checking
+Plugin 'bling/vim-airline'      " lean & mean status/tabline
+Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
 
 call vundle#end() " required
 

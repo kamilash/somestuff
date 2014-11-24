@@ -14,7 +14,7 @@ set shiftwidth=4                " (sw) width (in spaces) used in each step of au
 set expandtab                   " (et) converting tabs to spaces, use :retab to redo entire file
 set showcmd                     " (sc) display an incomplete command in the lower right
 set noswapfile                  " (swf) disables swapfiles
-set t_Co=256
+"set t_Co=256
 
 set spell                       " check spell is right
 highlight clear SpellBad        " clear highlight background to this group and sets underline
@@ -41,10 +41,21 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'scrooloose/nerdtree'    " shows directories tree
 Plugin 'scrooloose/syntastic'   " language syntax checking
-Plugin 'bling/vim-airline'      " lean & mean status/tabline
+"Plugin 'bling/vim-airline'      " lean & mean status/tabline
 Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
 
+" Javascript plugins
+Plugin 'moll/vim-node'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'vim-scripts/JavaScript-Indent'
+
+" Scala stuff, for Gatling
+Plugin 'derekwyatt/vim-scala'
+
 call vundle#end() " required
+
+" Had this problem on one of the dev envs: http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=2 " make backspace work like most other apps
 
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -66,6 +77,11 @@ nnoremap <C-b> :!make check<CR>
 
 " NerdTree
 nnoremap <Leader>t :NERDTreeToggle<CR>
+
+" Get that filetype stuff happening
+filetype on
+filetype plugin on
+filetype indent on
 
 " vim-airline
 if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))

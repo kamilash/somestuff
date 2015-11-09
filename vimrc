@@ -26,13 +26,9 @@ highlight SpellBad cterm=underline
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                             \ exe "normal g'\"" | endif
 
-" Filetype stuff
-filetype on
-filetype plugin on
-filetype indent on
-
 " Vundle Install
 " Set the runtime path to include Vundle and initialize
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Let Vundle manage Vundle, required
@@ -42,14 +38,15 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'    " shows directories tree
 Plugin 'scrooloose/syntastic'   " language syntax checking
 "Plugin 'bling/vim-airline'      " lean & mean status/tabline
-Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
+"Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
+Plugin 'fatih/vim-go'
 
 " Javascript plugins
 Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-scripts/JavaScript-Indent'
 
-" Scala stuff, for Gatling
+" Scala
 Plugin 'derekwyatt/vim-scala'
 
 call vundle#end() " required
@@ -59,6 +56,11 @@ set backspace=2 " make backspace work like most other apps
 
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Filetype stuff
+filetype on
+filetype plugin on
+filetype indent on
 
 " Move faster when screen is splitted
 map <C-DOWN> <C-w><DOWN>
@@ -84,16 +86,16 @@ filetype plugin on
 filetype indent on
 
 " vim-airline
-if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
-    set laststatus=2
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#fnamemod = ':t'
-    let g:airline_enable_branch = 1
-    let g:airline_enable_syntastic = 1
-    let g:airline_powerline_fonts = 1
-endif
+"if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
+"    set laststatus=2
+"    let g:airline#extensions#tabline#enabled = 1
+"    let g:airline#extensions#tabline#fnamemod = ':t'
+"    let g:airline_enable_branch = 1
+"    let g:airline_enable_syntastic = 1
+"    let g:airline_powerline_fonts = 1
+"endif
 
 " Syntastic Settings
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_enable_signs = 1
+"let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_auto_loc_list = 2
+"let g:syntastic_enable_signs = 1

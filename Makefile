@@ -1,13 +1,14 @@
-install-vimrc:
-	cp vimrc $(HOME)/.vimrc
+all: install-plugins
 
-install: install-vimrc
+install: 
+	echo "Copying vimrc"
+	cp vimrc $(HOME)/.vimrc
 	rm -rf $(HOME)/.vim
 	cp -pr vim $(HOME)/.vim
+
+install-plugins: install
 	echo "Installing Vundle"
-	rm -rf $(HOME)/.vim/bundle
-	git clone https://github.com/gmarik/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim
-	vim +PluginInstall +qall
-	echo "Workaround for the vim-scala plugin" #https://github.com/derekwyatt/vim-scala/issues/75
-	mkdir -p ~/.vim/ftdetect 
-	cp $(HOME)/.vim/bundle/vim-scala/ftdetect/scala.vim $(HOME)/.vim/ftdetect
+	rm -rf $(HOME)/.vim/bundle 
+	git clone https://github.com/gmarik/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim 
+	echo "Installing Plugins"
+	yes | vim +PluginInstall +qall

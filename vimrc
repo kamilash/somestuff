@@ -85,6 +85,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
+
 " vim-airline
 "if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
 "    set laststatus=2

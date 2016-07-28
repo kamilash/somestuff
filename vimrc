@@ -87,6 +87,21 @@ filetype indent on
 
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
+" Set all errors list to quickfix
+let g:go_list_type = "quickfix"
+"Enable colorfulness
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:rehash256 = 1
+
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
+"Some maps to vim-go
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <Leader>a :cclose<CR>
 
 " vim-airline
 "if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))

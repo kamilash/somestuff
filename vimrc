@@ -20,7 +20,7 @@ set spell                       " check spell is right
 highlight clear SpellBad        " clear highlight background to this group and sets underline
 highlight SpellBad cterm=underline 
 
-:match Error /\t/               " highlights tabs, when see it use :retab 
+" :match Error /\t/               " highlights tabs, when see it use :retab 
 
 " Jump back to last line when re-opening a file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -40,6 +40,7 @@ Plugin 'scrooloose/syntastic'   " language syntax checking
 "Plugin 'bling/vim-airline'      " lean & mean status/tabline
 "Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
 Plugin 'fatih/vim-go'
+Plugin 'ap/vim-buftabline'
 
 " Javascript plugins
 Plugin 'moll/vim-node'
@@ -79,6 +80,11 @@ nnoremap <C-b> :!make check<CR>
 
 " NerdTree
 nnoremap <Leader>t :NERDTreeToggle<CR>
+
+" Fast buffer navigation 
+nnoremap <Leader>j :bprevious<CR>
+nnoremap <Leader>k :bnext<CR>
+nnoremap <Leader>c :bd<CR>
 
 " Get that filetype stuff happening
 filetype on

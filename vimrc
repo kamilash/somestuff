@@ -14,7 +14,7 @@ set shiftwidth=4                " (sw) width (in spaces) used in each step of au
 set expandtab                   " (et) converting tabs to spaces, use :retab to redo entire file
 set showcmd                     " (sc) display an incomplete command in the lower right
 set noswapfile                  " (swf) disables swapfiles
-"set t_Co=256
+set t_Co=256
 
 set spell                       " check spell is right
 highlight clear SpellBad        " clear highlight background to this group and sets underline
@@ -37,10 +37,12 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'scrooloose/nerdtree'    " shows directories tree
 Plugin 'scrooloose/syntastic'   " language syntax checking
-"Plugin 'bling/vim-airline'      " lean & mean status/tabline
+"Plugin 'majutsushi/tagbar' "tagbar without airline
+Plugin 'ap/vim-buftabline' "Add cool tabs for buffers
+"Plugin 'itchyny/lightline.vim' " Like airline, but smaller
+Plugin 'bling/vim-airline'      " lean & mean status/tabline
 "Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
 Plugin 'fatih/vim-go'
-Plugin 'ap/vim-buftabline'
 
 " Javascript plugins
 Plugin 'moll/vim-node'
@@ -110,14 +112,14 @@ map <C-m> :cprevious<CR>
 nnoremap <Leader>a :cclose<CR>
 
 " vim-airline
-"if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
-"    set laststatus=2
-"    let g:airline#extensions#tabline#enabled = 1
-"    let g:airline#extensions#tabline#fnamemod = ':t'
-"    let g:airline_enable_branch = 1
-"    let g:airline_enable_syntastic = 1
-"    let g:airline_powerline_fonts = 1
-"endif
+if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
+    set laststatus=2
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#fnamemod = ':t'
+    let g:airline_enable_branch = 1
+    let g:airline_enable_syntastic = 1
+    let g:airline_powerline_fonts = 1
+endif
 
 " Syntastic Settings
 "let g:syntastic_always_populate_loc_list=1

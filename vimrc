@@ -15,6 +15,8 @@ set expandtab                   " (et) converting tabs to spaces, use :retab to 
 set showcmd                     " (sc) display an incomplete command in the lower right
 set noswapfile                  " (swf) disables swapfiles
 set t_Co=256
+set encoding=utf-8
+set guifont=Liberation\ Mono\ for\ Powerline\ 10 
 
 set spell                       " check spell is right
 highlight clear SpellBad        " clear highlight background to this group and sets underline
@@ -59,11 +61,6 @@ set backspace=2 " make backspace work like most other apps
 
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Filetype stuff
-filetype on
-filetype plugin on
-filetype indent on
 
 " Move faster when screen is splitted
 map <C-DOWN> <C-w><DOWN>
@@ -119,7 +116,38 @@ if filereadable(expand("~/.vim/bundle/vim-airline/plugin/airline.vim"))
     let g:airline_enable_branch = 1
     let g:airline_enable_syntastic = 1
     let g:airline_powerline_fonts = 1
+    let g:Powerline_symbols='fancy'
 endif
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+endif
+
+    " unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " Syntastic Settings
 "let g:syntastic_always_populate_loc_list=1

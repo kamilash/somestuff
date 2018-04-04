@@ -44,6 +44,8 @@ Plugin 'ap/vim-buftabline' "Add cool tabs for buffers
 "Plugin 'itchyny/lightline.vim' " Like airline, but smaller
 Plugin 'bling/vim-airline'      " lean & mean status/tabline
 "Plugin 'gcmt/wildfire.vim'      " quickly select the closest text object among a group of candidates
+
+" Go
 Plugin 'fatih/vim-go'
 
 " Javascript plugins
@@ -51,8 +53,8 @@ Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-scripts/JavaScript-Indent'
 
-" Scala
-Plugin 'derekwyatt/vim-scala'
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end() " required
 
@@ -126,7 +128,7 @@ if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
 
-    " unicode symbols
+" unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
